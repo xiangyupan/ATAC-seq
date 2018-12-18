@@ -6,7 +6,7 @@
 </br> 
 2.bowtie2.index     
 `bowtie2-build ~/goat_pan/my_clean_data/bwa_mem/ASM.fa goat.bowtie2.index`    
-</br>   
+
 3.bowtie2.mapping   
 `bowtie2 -x ../1.2.bowtie.index.goat/goat.bowtie2.index -X 2000 -1 ../01.cut-adapt/Rumen2_1_val_1.fq.gz -2 ../01.cut-adapt/Rumen2_2_val_2.fq.gz -S Rumen2.goat.sam`   
 `samtools view -bS Rumen2.goat.sam >Rumen2.goat.bam`    
