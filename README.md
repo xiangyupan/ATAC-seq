@@ -26,7 +26,7 @@
  `faSize ASM.fa > goat.size`    
 `sort -k1,1 -k2,2n /stor9000/apps/users/NWSUAF/2015050469/ChIPAnalysis/sh6/SD2_pe-5/SD2_H3K27AC_FE.bdg > SD2_H3K27AC_FE.bdg.sort`   
 `bedGraphToBigWig SD2_H3K27AC_FE.bdg.sort /stor9000/apps/users/NWSUAF/2015060145/genomic_align/phyloP/goat.sizes SD2_H3K27AC_FE.bw`  
-OR
+OR  
 `les Rumen2_peaks.narrowPeak |awk '{print $1"\t"$2"\t"$3"\t"$9}' > Rumen2_peaks.narrowPeak.bedgraph`    
 `bedGraphToBigWig Rumen2_peaks.narrowPeak.bedgraph ~/RSCE_Comparative_genome/Repeat_masker/Genome_sizes/goat.whole.sizes Rumen2_peaks.narrowPeak.bdgraph.bw`    
 
