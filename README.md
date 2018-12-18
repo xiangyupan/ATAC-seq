@@ -33,4 +33,4 @@ OR
 
 `bigWigToWig in.bigWig out.wig`   
 
-6.
+Continue……  
