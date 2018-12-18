@@ -16,7 +16,8 @@
 </br> 
 `java -Xmx50g -Djava.io.tmpdir=/stor9000/apps/users/NWSUAF/2016050001/tmp -jar ~/../2015060152/bin/picard-tools-2.1.1/picard.jar MarkDuplicates INPUT=Rumen2.goat.uniq20.sort.bam OUTPUT=Rumen2.goat.uniq20.sort.dedup.bam METRICS_FILE=Rumen2_dedup REMOVE_DUPLICATES=true CREATE_INDEX=true ASSUME_SORTED=true VALIDATION_STRINGENCY=LENIENT MAX_FILE_HANDLES=2000`   
 </br> 
-`samtools view -h Rumen2.goat.uniq20.sort.dedup.bam |awk '{if($3 != ''NC_005044.2''){print $0}}' |samtools view -Sb - >Rumen2.goat.uniq20.sort.dedup.noMT.bam`  #Remove mitochondria reads      
+`samtools view -h Rumen2.goat.uniq20.sort.dedup.bam |awk '{if($3 != ''NC_005044.2''){print $0}}' |samtools view -Sb - >Rumen2.goat.uniq20.sort.dedup.noMT.bam`  #Remove mitochondria reads     
+
 4.call.peak   #Broad or Narrow  
 `python2.7 /stor9000/apps/users/NWSUAF/2013110098/bin/python27-package/MACS2-2.1.1.20160309/bin/macs2 callpeak -t /stor9000/apps/users/NWSUAF/2016050001/Chip_RNA/ATAC-seq/1.3.bowtie2.alignment.goat/R1-3.goat.sort.uniqe20.dedup.noMT.bam --shift -37 --extsize 73 -f BAM -g 2500000000 -n R1-3_broad_bedgraph -q 0.05 -B --outdir R1-3_broad_bedgraph/ --broad`    
 
@@ -31,4 +32,5 @@ OR
 `bedGraphToBigWig Rumen2_peaks.narrowPeak.bedgraph ~/RSCE_Comparative_genome/Repeat_masker/Genome_sizes/goat.whole.sizes Rumen2_peaks.narrowPeak.bdgraph.bw`    
 
 `bigWigToWig in.bigWig out.wig`   
+
 6.
