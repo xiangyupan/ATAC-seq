@@ -24,7 +24,7 @@
 `python2.7 /stor9000/apps/users/NWSUAF/2013110098/bin/python27-package/MACS2-2.1.1.20160309/bin/macs2 bdgcmp -t ./R1-3_broad_bedgraph/R1-3_broad_bedgraph_treat_pileup.bdg -c ./R1-3_broad_bedgraph/R1-3_broad_bedgraph_control_lambda.bdg -o ./R1-3_broad_bedgraph/R1-3_broad_atac_FE.bdg -m FE`   
 </br> 
 5.wig    
- `faSize ASM.fa > goat.size`    
+ `faSize ASM.fa -detailed > goat.size`    
 `sort -k1,1 -k2,2n /stor9000/apps/users/NWSUAF/2015050469/ChIPAnalysis/sh6/SD2_pe-5/SD2_H3K27AC_FE.bdg > SD2_H3K27AC_FE.bdg.sort`   
 `bedGraphToBigWig SD2_H3K27AC_FE.bdg.sort /stor9000/apps/users/NWSUAF/2015060145/genomic_align/phyloP/goat.sizes SD2_H3K27AC_FE.bw`  
 OR  
