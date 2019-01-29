@@ -1,13 +1,13 @@
 ***Pipeline of analysing ATAC-seq data***    
 =============================================   
 
-1.trim.data    # To cut adapt and fastqc your data    
+1.trim.data    # To cut adapt and fastqc your data    对原始数据去接头和质控，得到val.fq.gz文件进行后续分析   
 `TrimGalore-0.5.0/trim_galore --fastqc --nextera --paired R1-3_HJNKHCCXY_L5_1.fq.gz R1-3_HJNKHCCXY_L5_2.fq.gz`    
 </br> 
-2.bowtie2.index     
+2.bowtie2.index  ## 对参考基因组建index    
 `bowtie2-build ~/goat_pan/my_clean_data/bwa_mem/ASM.fa goat.bowtie2.index`    
 
-3.bowtie2.mapping   
+3.bowtie2.mapping   ##   质控后数据mapping到参考基因组上，提供的是参考基因组的index  
 `bowtie2 -x ../1.2.bowtie.index.goat/goat.bowtie2.index -X 2000 -1 ../01.cut-adapt/Rumen2_1_val_1.fq.gz -2 ../01.cut-adapt/Rumen2_2_val_2.fq.gz -S Rumen2.goat.sam`   
 `samtools view -bS Rumen2.goat.sam >Rumen2.goat.bam`    
 `samtools view -q 20 -u Rumen2.goat.bam >Rumen2.goat.uniq20.bam`  #Pick unique reads    
